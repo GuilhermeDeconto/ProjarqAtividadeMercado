@@ -1,0 +1,25 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'MarketIosApp' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for MarketIosApp
+
+pod 'Alamofire', '~> 4.7'
+pod 'ObjectMapper', '~> 3.3'
+pod 'AlamofireObjectMapper', '= 5.2.1'
+pod 'IQKeyboardManagerSwift', '~> 6.2.0'
+pod 'PKHUD'
+
+  target 'MarketIosAppTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'MarketIosAppUITests' do
+    # Pods for testing
+  end
+
+end

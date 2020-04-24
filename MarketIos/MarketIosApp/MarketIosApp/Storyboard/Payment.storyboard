@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Payment View Controller-->
+        <scene sceneID="sL4-QF-025">
+            <objects>
+                <viewController storyboardIdentifier="PaymentViewController" id="zTC-JC-YaW" customClass="PaymentViewController" customModule="MarketIosApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xhW-Yg-6f5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pagamento" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="468-pk-pU0">
+                                <rect key="frame" x="134" y="44" width="146" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Valor total do carrinho" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7C-GO-fQz">
+                                <rect key="frame" x="20" y="131" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="er3-Hc-Tl3">
+                                <rect key="frame" x="20" y="202" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Cad-RP-Gkd">
+                                <rect key="frame" x="0.0" y="244" width="414" height="570"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PaymentResumeTableViewCell" rowHeight="74" id="2EK-iC-EU3" customClass="PaymentResumeTableViewCell" customModule="MarketIosApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="55.5" width="414" height="74"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2EK-iC-EU3" id="EsB-kn-Gc2">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="74"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bug-8i-e9X">
+                                                    <rect key="frame" x="20" y="27" width="167" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="167" id="fZ2-sm-Ceb"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="av7-KD-D7k">
+                                                    <rect key="frame" x="270" y="27" width="124" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="124" id="dcA-HO-tTX"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="av7-KD-D7k" secondAttribute="bottom" constant="15" id="3Ok-O9-iaa"/>
+                                                <constraint firstItem="av7-KD-D7k" firstAttribute="top" secondItem="EsB-kn-Gc2" secondAttribute="topMargin" constant="16" id="GKq-dW-7kZ"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="bug-8i-e9X" secondAttribute="bottom" constant="15" id="Q3f-5J-oRX"/>
+                                                <constraint firstItem="bug-8i-e9X" firstAttribute="top" secondItem="EsB-kn-Gc2" secondAttribute="topMargin" constant="16" id="VLd-Ld-Lyp"/>
+                                                <constraint firstItem="bug-8i-e9X" firstAttribute="leading" secondItem="EsB-kn-Gc2" secondAttribute="leadingMargin" id="aB8-Hu-6UA"/>
+                                                <constraint firstItem="av7-KD-D7k" firstAttribute="trailing" secondItem="EsB-kn-Gc2" secondAttribute="trailingMargin" id="z59-7u-5uY"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lbPrice" destination="av7-KD-D7k" id="89o-xR-jF2"/>
+                                            <outlet property="lbProduct" destination="bug-8i-e9X" id="Xgb-Tk-06S"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fpk-Ha-ueA" customClass="BorderButton" customModule="MarketIosApp" customModuleProvider="target">
+                                <rect key="frame" x="20" y="832" width="374" height="30"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Pagar">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="1" green="0.44705882349999998" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="didPressPay:" destination="zTC-JC-YaW" eventType="touchUpInside" id="eMI-o7-KHh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Cad-RP-Gkd" firstAttribute="top" secondItem="er3-Hc-Tl3" secondAttribute="bottom" constant="21" id="5RX-jt-cZF"/>
+                            <constraint firstItem="er3-Hc-Tl3" firstAttribute="leading" secondItem="F3a-RJ-dIF" secondAttribute="leading" constant="20" id="H4T-hF-26B"/>
+                            <constraint firstItem="fpk-Ha-ueA" firstAttribute="top" secondItem="Cad-RP-Gkd" secondAttribute="bottom" constant="18" id="KR3-Rd-nuQ"/>
+                            <constraint firstItem="fpk-Ha-ueA" firstAttribute="leading" secondItem="er3-Hc-Tl3" secondAttribute="leading" id="NKn-eA-trU"/>
+                            <constraint firstItem="fpk-Ha-ueA" firstAttribute="trailing" secondItem="er3-Hc-Tl3" secondAttribute="trailing" id="NoY-gb-t1x"/>
+                            <constraint firstItem="Cad-RP-Gkd" firstAttribute="trailing" secondItem="F3a-RJ-dIF" secondAttribute="trailing" id="Vhv-Qa-55O"/>
+                            <constraint firstItem="F3a-RJ-dIF" firstAttribute="trailing" secondItem="er3-Hc-Tl3" secondAttribute="trailing" constant="20" id="b5C-Pj-jBH"/>
+                            <constraint firstItem="F3a-RJ-dIF" firstAttribute="trailing" secondItem="k7C-GO-fQz" secondAttribute="trailing" constant="20" id="cKA-XL-zhM"/>
+                            <constraint firstItem="er3-Hc-Tl3" firstAttribute="top" secondItem="k7C-GO-fQz" secondAttribute="bottom" constant="50" id="fw9-zk-ehf"/>
+                            <constraint firstItem="fpk-Ha-ueA" firstAttribute="bottom" secondItem="F3a-RJ-dIF" secondAttribute="bottom" id="gh8-0t-sj5"/>
+                            <constraint firstItem="F3a-RJ-dIF" firstAttribute="trailing" secondItem="468-pk-pU0" secondAttribute="trailing" constant="134" id="h14-qg-bGM"/>
+                            <constraint firstItem="Cad-RP-Gkd" firstAttribute="leading" secondItem="F3a-RJ-dIF" secondAttribute="leading" id="jYB-Tv-Vfs"/>
+                            <constraint firstItem="k7C-GO-fQz" firstAttribute="top" secondItem="468-pk-pU0" secondAttribute="bottom" constant="51" id="o8Z-uD-gkR"/>
+                            <constraint firstItem="k7C-GO-fQz" firstAttribute="leading" secondItem="F3a-RJ-dIF" secondAttribute="leading" constant="20" id="q6G-y9-CPh"/>
+                            <constraint firstItem="468-pk-pU0" firstAttribute="leading" secondItem="F3a-RJ-dIF" secondAttribute="leading" constant="134" id="rZ5-Fo-gtI"/>
+                            <constraint firstItem="468-pk-pU0" firstAttribute="top" secondItem="F3a-RJ-dIF" secondAttribute="top" id="yIo-uF-uOn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="F3a-RJ-dIF"/>
+                    </view>
+                    <connections>
+                        <outlet property="lbPrice" destination="er3-Hc-Tl3" id="pkO-x6-1Dt"/>
+                        <outlet property="lbPriceTitle" destination="k7C-GO-fQz" id="JTL-Ly-FX2"/>
+                        <outlet property="lbTitle" destination="468-pk-pU0" id="GSz-IW-QIe"/>
+                        <outlet property="tableView" destination="Cad-RP-Gkd" id="iJJ-sm-7ip"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zfD-0P-zeI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-294.20289855072468" y="156.69642857142856"/>
+        </scene>
+    </scenes>
+</document>
