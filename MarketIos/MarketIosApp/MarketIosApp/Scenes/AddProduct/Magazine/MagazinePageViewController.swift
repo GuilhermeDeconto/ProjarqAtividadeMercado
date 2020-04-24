@@ -16,7 +16,14 @@ enum PageViewType:String {
     case higiene = "Higiene"
 }
 
+protocol MagazinePageViewControllerDelegate {
+    func didGoBack(product: [Product])
+}
+
 class MagazinePageViewController: UIPageViewController {
+    
+    var products: [Product]?
+    var delegatepage: MagazinePageViewControllerDelegate?
 
     private (set) lazy var orderedViewControllers:[UIViewController] = {
         return [self.newPageView(.frutas),
@@ -60,8 +67,16 @@ class MagazinePageViewController: UIPageViewController {
     private func newPageView(_ viewType:PageViewType) -> UIViewController {
         let controller = UIStoryboard(name: "Product", bundle: nil).instantiateViewController(withIdentifier: "MagazineViewController") as! MagazineViewController
         controller.category = viewType.rawValue
+        controller.delegate = self
         return controller
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.delegatepage?.didGoBack(product: self.products ?? [])
+    }
+    
+    
     
 }
 extension MagazinePageViewController: UIPageViewControllerDataSource {
@@ -102,5 +117,10 @@ extension MagazinePageViewController: UIPageViewControllerDataSource {
     func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
         
         return currentIndex
+    }
+}
+extension MagazinePageViewController : MagazineViewControllerDelegate{
+    func didGoBack(product: [Product]){
+        self.products = product
     }
 }

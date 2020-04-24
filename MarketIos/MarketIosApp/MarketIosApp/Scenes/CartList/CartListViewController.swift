@@ -79,6 +79,16 @@ extension CartListViewController: UITableViewDataSource {
 }
 
 extension CartListViewController: AddProductViewControllerDelegate{
+    func didGoBackMagazine(product: [Product]) {
+        if self.productList == nil {
+            self.productList = []
+        }
+        for item in product {
+            self.productList?.append(item)
+        }
+        self.tableView.reloadData()
+    }
+    
     func didGoBack(product:Product){
         if self.productList == nil {
             self.productList = []

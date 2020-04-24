@@ -10,6 +10,7 @@ import UIKit
 import PKHUD
 protocol AddProductViewControllerDelegate {
     func didGoBack(product: Product)
+    func didGoBackMagazine(product: [Product])
 }
 
 class AddProductViewController: UIViewController {
@@ -41,8 +42,8 @@ class AddProductViewController: UIViewController {
     }
     
     @IBAction func goToMagazine(_ sender: Any) {
-        let controller = UIStoryboard(name: "Product", bundle: nil).instantiateViewController(withIdentifier: "MagazinePageViewController")
-        
+        let controller = UIStoryboard(name: "Product", bundle: nil).instantiateViewController(withIdentifier: "MagazinePageViewController") as! MagazinePageViewController
+        controller.delegatepage = self
         self.navigationController?.pushViewController(controller, animated: true)
     }
     @IBAction func addProductInCostumerCart(_ sender: Any) {
@@ -61,8 +62,11 @@ class AddProductViewController: UIViewController {
         }
     }
 }
-extension AddProductViewController : MagazineViewControllerDelegate{
-    func didGoBack(product: [Product]){
+extension AddProductViewController : MagazinePageViewControllerDelegate{
+    func didGoBack(product: [Product]) {
+        self.products = []
         self.products = product
+        self.navigationController?.popViewController(animated: true)
+        self.delegate?.didGoBackMagazine(product: self.products ?? [])
     }
 }
