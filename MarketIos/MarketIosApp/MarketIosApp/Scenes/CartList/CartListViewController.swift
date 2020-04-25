@@ -28,27 +28,41 @@ class CartListViewController: UIViewController {
         controller.delegate = self
         self.navigationController?.pushViewController(controller, animated: true)
     }
+    
+    func closeMarket(){
+        let market = Market.init()
+        market.id = Session.shared.marketId
+//        MarketService.putMarket(market:market).onSuccess { (_, result) in
 //
-//    func getProducts(){
-//        GetProductsListService.getProductss().onSuccess { (_, result) in
-//            if let result = result?.product {
-//                self.productList = result
-//                self.tableView.reloadData()
-//            }
-//        }.onFailure { (_, error) in
 //        }
-//    }
+    }
     
     
     @IBAction func didPressBuy(_ sender: Any) {
         let controller = UIStoryboard(name: "Payment", bundle: nil).instantiateViewController(withIdentifier: "PaymentViewController") as! PaymentViewController
         controller.product = productList
+        controller.delegate = self
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+    }
+    //
+    //    func getProducts(){
+    //        GetProductsListService.getProductss().onSuccess { (_, result) in
+    //            if let result = result?.product {
+    //                self.productList = result
+    //                self.tableView.reloadData()
+    //            }
+    //        }.onFailure { (_, error) in
+    //        }
+    //    }
     
 }
 
@@ -96,4 +110,14 @@ extension CartListViewController: AddProductViewControllerDelegate{
         self.productList?.append(product)
         self.tableView.reloadData()
     }
+}
+extension CartListViewController: PaymentViewControllerDelegate {
+    func didGoBack(success: Bool) {
+        if success {
+            self.productList = []
+            self.tableView.reloadData()
+        }
+    }
+    
+    
 }

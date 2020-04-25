@@ -36,9 +36,11 @@ class Market: NSObject, Mappable {
     }
     var open : Bool?
     var time : String?
+    var id: String?
     
     func mapping(map: Map) {
         self.open <- map["open"]
         self.time <- map["time"]
+        self.id <- map["_id"]
     }
 }

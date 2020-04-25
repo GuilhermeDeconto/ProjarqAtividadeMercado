@@ -12,6 +12,7 @@ import Alamofire
 
 enum PostMarketRoute {
     case postMarket(market: Market)
+    case putMarket(market: Market)
 }
 
 class PostMarketProtocol: NSObject, NetworkProtocol {
@@ -22,6 +23,8 @@ class PostMarketProtocol: NSObject, NetworkProtocol {
         switch route {
         case .postMarket:
             return "market"
+        case .putMarket:
+            return "market"
         }
     }
     
@@ -29,12 +32,21 @@ class PostMarketProtocol: NSObject, NetworkProtocol {
         return nil
     }
     
-    var httpMethod: HTTPMethod = .post
+    var httpMethod: HTTPMethod {
+        switch route {
+        case .postMarket:
+            return HTTPMethod.post
+        case .putMarket:
+            return HTTPMethod.put
+        }
+    }
     
     var parameters: Parameters? {
         var parameters: [String: Any] = [:]
         switch route {
         case let .postMarket(market):
+            parameters["market"] = Mapper<Market>().toJSON(market)
+        case let .putMarket(market):
             parameters["market"] = Mapper<Market>().toJSON(market)
         default:
             break

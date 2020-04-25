@@ -23,6 +23,7 @@
 		4644D2B42452651C006C0C36 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4644D2B32452651C006C0C36 /* GradientView.swift */; };
 		4644D2B62452660F006C0C36 /* MagazineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4644D2B52452660F006C0C36 /* MagazineTableViewCell.swift */; };
 		4644D2B8245266A6006C0C36 /* MagazineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4644D2B7245266A6006C0C36 /* MagazineViewController.swift */; };
+		4644D2BC2453A19C006C0C36 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4644D2BB2453A19C006C0C36 /* Session.swift */; };
 		466E859B2451224E0009D35F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466E859A2451224E0009D35F /* AppDelegate.swift */; };
 		466E859D2451224E0009D35F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466E859C2451224E0009D35F /* SceneDelegate.swift */; };
 		466E859F2451224E0009D35F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466E859E2451224E0009D35F /* ViewController.swift */; };
@@ -78,6 +79,7 @@
 		4644D2B32452651C006C0C36 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		4644D2B52452660F006C0C36 /* MagazineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagazineTableViewCell.swift; sourceTree = "<group>"; };
 		4644D2B7245266A6006C0C36 /* MagazineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagazineViewController.swift; sourceTree = "<group>"; };
+		4644D2BB2453A19C006C0C36 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		466E85972451224E0009D35F /* MarketIosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarketIosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		466E859A2451224E0009D35F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		466E859C2451224E0009D35F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -223,6 +225,14 @@
 			path = Magazine;
 			sourceTree = "<group>";
 		};
+		4644D2BA2453A192006C0C36 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				4644D2BB2453A19C006C0C36 /* Session.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		466E858E2451224E0009D35F = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +258,7 @@
 		466E85992451224E0009D35F /* MarketIosApp */ = {
 			isa = PBXGroup;
 			children = (
+				4644D2BA2453A192006C0C36 /* Helper */,
 				4644D2932451D633006C0C36 /* Component */,
 				466E85DF24513CA80009D35F /* Application */,
 				466E85D324512CD70009D35F /* Network */,
@@ -608,6 +619,7 @@
 				466E85CF245123550009D35F /* CartListTableViewCell.swift in Sources */,
 				4644D2AC2452323E006C0C36 /* PaymentResumeTableViewCell.swift in Sources */,
 				4644D2A324521F94006C0C36 /* Establishment.swift in Sources */,
+				4644D2BC2453A19C006C0C36 /* Session.swift in Sources */,
 				466E85D724512E7A0009D35F /* ProductListProtocol.swift in Sources */,
 				466E859B2451224E0009D35F /* AppDelegate.swift in Sources */,
 				4644D2B62452660F006C0C36 /* MagazineTableViewCell.swift in Sources */,

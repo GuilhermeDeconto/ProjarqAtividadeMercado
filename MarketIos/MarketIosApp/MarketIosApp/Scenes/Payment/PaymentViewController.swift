@@ -8,6 +8,11 @@
 
 import UIKit
 import PKHUD
+
+protocol PaymentViewControllerDelegate {
+    func didGoBack(success: Bool)
+}
+
 class PaymentViewController: UIViewController {
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var lbPriceTitle: UILabel!
@@ -17,6 +22,10 @@ class PaymentViewController: UIViewController {
     
     var product : [Product]?
     var totalPrice: Double = 0
+    
+    var delegate: PaymentViewControllerDelegate?
+    
+    var success: Bool = false
     
     var cellIdentifier = "PaymentResumeTableViewCell"
     
@@ -33,8 +42,8 @@ class PaymentViewController: UIViewController {
     
     func postProducts(){
         PostProductService.postProducts(product: self.product ?? []).onSuccess { (_, result) in
-            if let result = result {
-            HUD.flash(.success, delay: 2.0)
+            HUD.flash(.success, delay: 2.0){ finished in
+                self.success = true
             }
         }.onFailure { (_, error) in
         }
@@ -43,6 +52,12 @@ class PaymentViewController: UIViewController {
     @IBAction func didPressPay(_ sender: Any) {
         postProducts()
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.delegate?.didGoBack(success: self.success)
+    }
+    
 }
 extension PaymentViewController : UITableViewDelegate{
     
