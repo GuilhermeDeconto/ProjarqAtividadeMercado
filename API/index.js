@@ -221,6 +221,37 @@ server.route({
 });
 
 server.route({
+    method: "PUT",
+    options: {
+        validate: {
+            payload: {
+                market: {
+                    open: joi.boolean().required()
+                },
+                
+            },
+            failAction: (request, resp, error) => {
+                return error.isJoi ? resp.response(error.details[0]).takeover() : resp.response(error).takeover();
+            }
+        }
+    },
+    path: "/market/{id}",
+    handler: async (request, resp) => {
+        try {
+            let result = await MarketHoursModel.findByIdAndUpdate(request.params.id, request.payload.market, { new: true });
+            let data = {
+                status: "success",
+                message: "Status updated successfully",
+                market: result
+            }
+            return resp.response(data);
+        } catch (error) {
+            return resp.response(error).code(500);
+        }
+    }
+});
+
+server.route({
     method: "DELETE",
     path: "/product/{id}",
     handler: async (request, res) => {

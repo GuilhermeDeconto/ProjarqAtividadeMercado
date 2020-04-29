@@ -22,7 +22,7 @@ class MarketService {
     class func putMarket (market : Market) -> NetworkPromise<Establishment> {
         return NetworkPromise { promise in
             do {
-                try Network.request(PostMarketProtocol(route: .putMarket(market: market)), promise)
+                try Network.request(PostMarketProtocol(route: .putMarket(marketId: Session.shared.marketId , market: market)), promise)
             } catch {
                 
             }

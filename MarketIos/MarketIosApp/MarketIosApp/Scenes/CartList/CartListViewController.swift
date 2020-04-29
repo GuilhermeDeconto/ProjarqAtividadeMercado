@@ -20,21 +20,27 @@ class CartListViewController: UIViewController {
         super.viewDidLoad()
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Add product", style: .done, target: self, action: #selector(self.action(sender:)))
+        let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItem.Style.plain, target: self, action: #selector(CartListViewController.back(sender:)))
+        self.navigationItem.leftBarButtonItem = newBackButton
     }
     
-    @objc func action(sender: UIBarButtonItem) {
-        let controller = UIStoryboard(name: "Product", bundle: nil).instantiateViewController(withIdentifier: "AddProductViewController") as! AddProductViewController
-        controller.delegate = self
-        self.navigationController?.pushViewController(controller, animated: true)
+    @objc func back(sender: UIBarButtonItem) {
+        closeMarket(completion: { (success) -> Void in
+            if success {
+                _ = self.navigationController?.popViewController(animated: true)
+            }
+        })
     }
     
-    func closeMarket(){
+    
+    func closeMarket(completion: @escaping (Bool) -> ()){
         let market = Market.init()
-        market.id = Session.shared.marketId
-//        MarketService.putMarket(market:market).onSuccess { (_, result) in
-//
-//        }
+        market.open = false
+        MarketService.putMarket(market:market).onSuccess { (_, result) in
+            completion(true)
+        }.onFailure { (_, error) in
+            completion(false)
+        }
     }
     
     
@@ -51,19 +57,24 @@ class CartListViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
     }
-    //
-    //    func getProducts(){
-    //        GetProductsListService.getProductss().onSuccess { (_, result) in
-    //            if let result = result?.product {
-    //                self.productList = result
-    //                self.tableView.reloadData()
-    //            }
-    //        }.onFailure { (_, error) in
-    //        }
-    //    }
     
+    @IBAction func didPressAddItem(_ sender: Any) {
+        let controller = UIStoryboard(name: "Product", bundle: nil).instantiateViewController(withIdentifier: "ProductInfoViewController") as! ProductInfoViewController
+        controller.delegate = self
+        self.navigationController?.present(controller, animated: true, completion: {
+        })
+    }
+}
+
+extension CartListViewController : ProductInfoViewControllerDelegate {
+    func didGoBackFromProductInfo(product: Product){
+        if self.productList == nil {
+            self.productList = []
+        }
+        self.productList?.append(product)
+        self.tableView.reloadData()
+    }
 }
 
 extension CartListViewController: UITableViewDelegate {
@@ -84,33 +95,11 @@ extension CartListViewController: UITableViewDataSource {
         let product = self.productList?[indexPath.row]
         cell.lbProduct.text = product?.name
         cell.lbPrice.text = String.init(Double.init(product?.price ?? 0))
-        cell.lbClient.text = product?.client
-        cell.lbCategory.text = product?.category
         cell.lbQuantity.text = String.init(Double.init(product?.quantity ?? 0))
-        cell.lbMarca.text = product?.madeby
         return cell
     }
 }
 
-extension CartListViewController: AddProductViewControllerDelegate{
-    func didGoBackMagazine(product: [Product]) {
-        if self.productList == nil {
-            self.productList = []
-        }
-        for item in product {
-            self.productList?.append(item)
-        }
-        self.tableView.reloadData()
-    }
-    
-    func didGoBack(product:Product){
-        if self.productList == nil {
-            self.productList = []
-        }
-        self.productList?.append(product)
-        self.tableView.reloadData()
-    }
-}
 extension CartListViewController: PaymentViewControllerDelegate {
     func didGoBack(success: Bool) {
         if success {

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4644D28F2451431C006C0C36 /* Product.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4644D28E2451431C006C0C36 /* Product.storyboard */; };
-		4644D29224514346006C0C36 /* AddProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4644D29124514346006C0C36 /* AddProductViewController.swift */; };
 		4644D2952451D63F006C0C36 /* BorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4644D2942451D63F006C0C36 /* BorderButton.swift */; };
 		4644D2992451EE73006C0C36 /* PostProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4644D2982451EE73006C0C36 /* PostProduct.swift */; };
 		4644D29B2451F564006C0C36 /* PostProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4644D29A2451F564006C0C36 /* PostProductService.swift */; };
@@ -19,11 +18,9 @@
 		4644D2A724522BDB006C0C36 /* Payment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4644D2A624522BDB006C0C36 /* Payment.storyboard */; };
 		4644D2AA24522C59006C0C36 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4644D2A924522C59006C0C36 /* PaymentViewController.swift */; };
 		4644D2AC2452323E006C0C36 /* PaymentResumeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4644D2AB2452323E006C0C36 /* PaymentResumeTableViewCell.swift */; };
-		4644D2B224526234006C0C36 /* MagazinePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4644D2B124526234006C0C36 /* MagazinePageViewController.swift */; };
 		4644D2B42452651C006C0C36 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4644D2B32452651C006C0C36 /* GradientView.swift */; };
-		4644D2B62452660F006C0C36 /* MagazineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4644D2B52452660F006C0C36 /* MagazineTableViewCell.swift */; };
-		4644D2B8245266A6006C0C36 /* MagazineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4644D2B7245266A6006C0C36 /* MagazineViewController.swift */; };
 		4644D2BC2453A19C006C0C36 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4644D2BB2453A19C006C0C36 /* Session.swift */; };
+		4644D2BE24579EE7006C0C36 /* ProductInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4644D2BD24579EE7006C0C36 /* ProductInfoViewController.swift */; };
 		466E859B2451224E0009D35F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466E859A2451224E0009D35F /* AppDelegate.swift */; };
 		466E859D2451224E0009D35F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466E859C2451224E0009D35F /* SceneDelegate.swift */; };
 		466E859F2451224E0009D35F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466E859E2451224E0009D35F /* ViewController.swift */; };
@@ -64,7 +61,6 @@
 /* Begin PBXFileReference section */
 		2CEBCF7D74D90D98402B8CA8 /* Pods-MarketIosAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarketIosAppTests.debug.xcconfig"; path = "Target Support Files/Pods-MarketIosAppTests/Pods-MarketIosAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4644D28E2451431C006C0C36 /* Product.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Product.storyboard; sourceTree = "<group>"; };
-		4644D29124514346006C0C36 /* AddProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductViewController.swift; sourceTree = "<group>"; };
 		4644D2942451D63F006C0C36 /* BorderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderButton.swift; sourceTree = "<group>"; };
 		4644D2982451EE73006C0C36 /* PostProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostProduct.swift; sourceTree = "<group>"; };
 		4644D29A2451F564006C0C36 /* PostProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostProductService.swift; sourceTree = "<group>"; };
@@ -75,11 +71,9 @@
 		4644D2A624522BDB006C0C36 /* Payment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Payment.storyboard; sourceTree = "<group>"; };
 		4644D2A924522C59006C0C36 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		4644D2AB2452323E006C0C36 /* PaymentResumeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentResumeTableViewCell.swift; sourceTree = "<group>"; };
-		4644D2B124526234006C0C36 /* MagazinePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagazinePageViewController.swift; sourceTree = "<group>"; };
 		4644D2B32452651C006C0C36 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
-		4644D2B52452660F006C0C36 /* MagazineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagazineTableViewCell.swift; sourceTree = "<group>"; };
-		4644D2B7245266A6006C0C36 /* MagazineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagazineViewController.swift; sourceTree = "<group>"; };
 		4644D2BB2453A19C006C0C36 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		4644D2BD24579EE7006C0C36 /* ProductInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoViewController.swift; sourceTree = "<group>"; };
 		466E85972451224E0009D35F /* MarketIosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarketIosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		466E859A2451224E0009D35F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		466E859C2451224E0009D35F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -155,8 +149,7 @@
 		4644D29024514331006C0C36 /* AddProduct */ = {
 			isa = PBXGroup;
 			children = (
-				4644D2AD245261A8006C0C36 /* Magazine */,
-				4644D29124514346006C0C36 /* AddProductViewController.swift */,
+				4644D2BD24579EE7006C0C36 /* ProductInfoViewController.swift */,
 			);
 			path = AddProduct;
 			sourceTree = "<group>";
@@ -213,16 +206,6 @@
 				4644D2AB2452323E006C0C36 /* PaymentResumeTableViewCell.swift */,
 			);
 			path = Payment;
-			sourceTree = "<group>";
-		};
-		4644D2AD245261A8006C0C36 /* Magazine */ = {
-			isa = PBXGroup;
-			children = (
-				4644D2B124526234006C0C36 /* MagazinePageViewController.swift */,
-				4644D2B52452660F006C0C36 /* MagazineTableViewCell.swift */,
-				4644D2B7245266A6006C0C36 /* MagazineViewController.swift */,
-			);
-			path = Magazine;
 			sourceTree = "<group>";
 		};
 		4644D2BA2453A192006C0C36 /* Helper */ = {
@@ -609,22 +592,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4644D29224514346006C0C36 /* AddProductViewController.swift in Sources */,
 				4644D2A124521F58006C0C36 /* Marketservice.swift in Sources */,
-				4644D2B8245266A6006C0C36 /* MagazineViewController.swift in Sources */,
 				4644D2B42452651C006C0C36 /* GradientView.swift in Sources */,
 				4644D2AA24522C59006C0C36 /* PaymentViewController.swift in Sources */,
 				466E85CC245122EE0009D35F /* CartListViewController.swift in Sources */,
 				466E859F2451224E0009D35F /* ViewController.swift in Sources */,
 				466E85CF245123550009D35F /* CartListTableViewCell.swift in Sources */,
+				4644D2BE24579EE7006C0C36 /* ProductInfoViewController.swift in Sources */,
 				4644D2AC2452323E006C0C36 /* PaymentResumeTableViewCell.swift in Sources */,
 				4644D2A324521F94006C0C36 /* Establishment.swift in Sources */,
 				4644D2BC2453A19C006C0C36 /* Session.swift in Sources */,
 				466E85D724512E7A0009D35F /* ProductListProtocol.swift in Sources */,
 				466E859B2451224E0009D35F /* AppDelegate.swift in Sources */,
-				4644D2B62452660F006C0C36 /* MagazineTableViewCell.swift in Sources */,
 				466E85DB245135470009D35F /* Products.swift in Sources */,
-				4644D2B224526234006C0C36 /* MagazinePageViewController.swift in Sources */,
 				4644D29B2451F564006C0C36 /* PostProductService.swift in Sources */,
 				466E859D2451224E0009D35F /* SceneDelegate.swift in Sources */,
 				466E85D524512CE10009D35F /* Network.swift in Sources */,
