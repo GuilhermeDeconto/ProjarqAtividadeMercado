@@ -130,7 +130,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cancel" width="170" height="170"/>
+        <image name="cancel" width="170.5" height="170.5"/>
         <image name="checked" width="170.5" height="170.5"/>
     </resources>
 </document>
