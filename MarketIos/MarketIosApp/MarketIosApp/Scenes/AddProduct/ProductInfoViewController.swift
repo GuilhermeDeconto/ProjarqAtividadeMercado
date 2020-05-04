@@ -30,6 +30,11 @@ class ProductInfoViewController: UIViewController {
         super.viewWillDisappear(animated)
         
     }
+    @IBAction func didPressCancel(_ sender: Any) {
+        self.dismiss(animated: true, completion: {
+            
+        })
+    }
     
     @IBAction func didPressContinue(_ sender: Any) {
         self.product.name = self.lbName.text ?? "Abacate"

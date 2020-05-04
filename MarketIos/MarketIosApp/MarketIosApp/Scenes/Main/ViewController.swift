@@ -24,10 +24,10 @@ class ViewController: UIViewController {
             if let result = result?.market {
                 Session.shared.marketId = result.id ?? ""
             }
-            HUD.flash(.label("Início das atividades"), delay: 1.0){ finished in
+//            HUD.flash(.label("Início das atividades"), delay: 1.0){ finished in
                 let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CartListViewController") as! CartListViewController
                 self.navigationController?.pushViewController(controller, animated: true)
-            }
+//            }
         }.onFailure { (_, error) in
             
         }

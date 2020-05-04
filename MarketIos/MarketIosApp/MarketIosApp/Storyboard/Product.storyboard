@@ -57,7 +57,7 @@
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6d-dS-HIK">
-                                                    <rect key="frame" x="137" y="238" width="60" height="60"/>
+                                                    <rect key="frame" x="214" y="238" width="60" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="60" id="Rk4-ry-Pn4"/>
                                                         <constraint firstAttribute="height" constant="60" id="Yy4-4r-3t8"/>
@@ -67,18 +67,31 @@
                                                         <action selector="didPressContinue:" destination="fXX-bc-1AW" eventType="touchUpInside" id="LKW-2k-qyx"/>
                                                     </connections>
                                                 </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jcc-HR-loE">
+                                                    <rect key="frame" x="60" y="238" width="60" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="lOb-od-XDP"/>
+                                                        <constraint firstAttribute="height" constant="60" id="qLU-ZV-bMr"/>
+                                                    </constraints>
+                                                    <state key="normal" image="cancel"/>
+                                                    <connections>
+                                                        <action selector="didPressCancel:" destination="fXX-bc-1AW" eventType="touchUpInside" id="FU1-bF-GWj"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             <constraints>
                                                 <constraint firstItem="KtB-aO-mIg" firstAttribute="top" secondItem="GaT-2e-FW4" secondAttribute="top" constant="10" id="1Bb-hN-ZDY"/>
+                                                <constraint firstAttribute="bottom" secondItem="jcc-HR-loE" secondAttribute="bottom" constant="20" id="2Rw-vP-X2O"/>
                                                 <constraint firstItem="fcv-tf-dIg" firstAttribute="top" secondItem="gTc-eT-Iwa" secondAttribute="bottom" constant="8" id="3Om-tx-IJb"/>
+                                                <constraint firstAttribute="trailing" secondItem="D6d-dS-HIK" secondAttribute="trailing" constant="60" id="3p4-as-1Pk"/>
                                                 <constraint firstAttribute="trailing" secondItem="0Rv-LO-uYB" secondAttribute="trailing" constant="10" id="7hv-TP-ZJZ"/>
                                                 <constraint firstItem="0Rv-LO-uYB" firstAttribute="leading" secondItem="GaT-2e-FW4" secondAttribute="leading" constant="10" id="FeK-u3-aCD"/>
                                                 <constraint firstItem="gTc-eT-Iwa" firstAttribute="top" secondItem="0Rv-LO-uYB" secondAttribute="bottom" constant="8" id="HQz-Nj-o25"/>
                                                 <constraint firstItem="Gvq-dn-31W" firstAttribute="leading" secondItem="GaT-2e-FW4" secondAttribute="leading" constant="10" id="Hxg-Ys-l81"/>
                                                 <constraint firstItem="fcv-tf-dIg" firstAttribute="leading" secondItem="GaT-2e-FW4" secondAttribute="leading" constant="10" id="PKI-0R-dMy"/>
                                                 <constraint firstAttribute="trailing" secondItem="fcv-tf-dIg" secondAttribute="trailing" constant="10" id="Zce-Y2-MWy"/>
-                                                <constraint firstItem="D6d-dS-HIK" firstAttribute="centerX" secondItem="GaT-2e-FW4" secondAttribute="centerX" id="cYu-fj-AcF"/>
+                                                <constraint firstItem="jcc-HR-loE" firstAttribute="leading" secondItem="GaT-2e-FW4" secondAttribute="leading" constant="60" id="bv7-BV-C9X"/>
                                                 <constraint firstItem="0Rv-LO-uYB" firstAttribute="top" secondItem="Gvq-dn-31W" secondAttribute="bottom" constant="8" id="cu3-ay-Y7r"/>
                                                 <constraint firstItem="Gvq-dn-31W" firstAttribute="top" secondItem="GaT-2e-FW4" secondAttribute="top" constant="59" id="f3P-Qa-mU5"/>
                                                 <constraint firstItem="gTc-eT-Iwa" firstAttribute="leading" secondItem="GaT-2e-FW4" secondAttribute="leading" constant="10" id="hHC-b5-dGd"/>
@@ -117,6 +130,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cancel" width="170" height="170"/>
         <image name="checked" width="170.5" height="170.5"/>
     </resources>
 </document>
