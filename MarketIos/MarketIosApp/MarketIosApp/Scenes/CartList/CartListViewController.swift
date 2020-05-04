@@ -14,6 +14,7 @@ class CartListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     let cellIdentifier = "CartListTableViewCell"
+    let cellNoItems = "noItems"
     var productList : [Product]?
     
     override func viewDidLoad() {
@@ -86,24 +87,30 @@ extension CartListViewController: UITableViewDataSource {
         if self.productList != nil {
             return self.productList!.count
         }else {
-            return 0
+            return 1
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CartListTableViewCell
-        let product = self.productList?[indexPath.row]
-        cell.lbProduct.text = product?.name
-        cell.lbPrice.text = String.init(Double.init(product?.price ?? 0))
-        cell.lbQuantity.text = String.init(Double.init(product?.quantity ?? 0))
-        return cell
+        if self.productList == nil || self.productList?.count == 0 || self.productList?.isEmpty ?? false {
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellNoItems, for: indexPath)
+            return cell
+        }else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CartListTableViewCell
+            let product = self.productList?[indexPath.row]
+            cell.lbProduct.text = product?.name
+            cell.lbPrice.text = String.init(Double.init(product?.price ?? 0))
+            cell.lbQuantity.text = String.init(Double.init(product?.quantity ?? 0))
+            return cell
+        }
+        
     }
 }
 
 extension CartListViewController: PaymentViewControllerDelegate {
     func didGoBack(success: Bool) {
         if success {
-            self.productList = []
+            self.productList = nil
             self.tableView.reloadData()
         }
     }
